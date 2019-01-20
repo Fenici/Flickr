@@ -13,10 +13,10 @@ class Flickr extends React.Component {
     //       .then(res => {
     //         const data = res.data;
     //         this.setState({ data });
-    //         console.log(data);
+    //         
     //       })
     //       .catch(error => {
-    //         console.error("ERROR 404 !!!!!!!!!");
+    //         
     //       })
     //       .then(() => {});
 
@@ -25,17 +25,17 @@ class Flickr extends React.Component {
 
 
 
-    getData=()=>{
+    fetchData=()=>{
 
         Axios.get("https://api.flickr.com/services/feeds/photos_public.gne?tags=cat&format=json&nojsoncallback=true")
             .then(res => {
                 const data = res.data;
                 this.setState({ data });
-                console.log(data);
+                
                 
             })
             .catch(error => {
-                console.error("ERROR 404 !!!!!!!!!");
+                
             })
             .then(() => { });
     }
@@ -43,23 +43,26 @@ class Flickr extends React.Component {
 
 
   componentDidMount() {
-        this.getData();
+      this.fetchData();
   }
 
   render() {
     //   const data = this.state
-    //   console.log(data);
+    //   
 
 
     return <div>
-
-    
         {this.state.data && this.state.data.items.map((item, id) => (
             <div className="example-1 card" key={id}>
-                <div className="wrapper" style={{
-                    background: `url(${item.media.m})`,backgroundPosition: 'center',
-                    backgroundSize: 'fit',
-                    backgroundRepeat: 'no-repeat',}}>
+              <div
+                className="wrapper"
+                style={{
+                  background: `url(${item.media.m})`,
+                  backgroundPosition: "center",
+                    backgroundSize: "cover",
+                  backgroundRepeat: "no-repeat"
+                }}
+              >
                 <div className="date">
                   <span className="year">{item.published}</span>
                 </div>
@@ -69,17 +72,12 @@ class Flickr extends React.Component {
                     <h1 className="title">
                       <a>{item.title} </a>
                     </h1>
-                    <p className="text">
-                      {item.tags}
-                    </p>
+                    <p className="text">{item.tags}</p>
                   </div>
                 </div>
               </div>
             </div>
-          ))
-
-       
-        }
+          ))}
       </div>;
   }
 }
