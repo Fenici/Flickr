@@ -7,7 +7,7 @@ API: https://www.flickr.com/services/feeds/docs/photos_public/
 
 Step 2: Get public feed and display 10 random pics of ‘cat’ (or ‘dog’?)
 
-Bonus: Let the user input tag
+sBonus: Let the user input tag
 
 
 

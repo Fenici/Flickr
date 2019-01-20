@@ -89,6 +89,7 @@ h1 {
 }
 .card .title {
   margin-top: 10px;
+  font-size:14px;
 }
 .card .text {
   height: 70px;
