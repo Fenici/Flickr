@@ -4,7 +4,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 API: https://www.flickr.com/services/feeds/docs/photos_public/
 ~Step 1: Figure out how to get json response (read docs!)~
+
 Step 2: Get public feed and display 10 random pics of ‘cat’ (or ‘dog’?)
+
 Bonus: Let the user input tag
 
 
